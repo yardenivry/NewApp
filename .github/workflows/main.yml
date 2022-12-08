@@ -20,6 +20,11 @@ jobs:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_TOKEN }}
       
+      - name: Prepare
+        id: Prepare
+        run: | 
+          DOCKER_IMAGE=gentlefisty/flask-app
+      
       - name: Setup Docker buildx
         uses: docker/setup-buildx-action@v1
         id: buildx
